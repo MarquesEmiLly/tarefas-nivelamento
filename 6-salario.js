@@ -1,10 +1,9 @@
-function salario(ouro, prata, cobre) {
-    let dia = 0
-    const ferreiro = cobre * (dia + 7) //10*7=70
-    const dev = prata * (dia + 5) //20*5=100
-    const merendeira = ouro * (dia + 10)//30*10= 300
-    return ferreiro + dev + merendeira
-
+function salario(profissao, dias) {
+    dias = 0
+    const ferreiro = profissao * (dias + 7) //10*7=70
+    const dev = profissao * (dias + 5) //20*5=100
+    const merendeira = profissao * (dias + 10)//30*10= 300
+    return ferreiro +'---'+ dev + '---' + merendeira
 
 }
 console.log(salario(30, 20, 10))
