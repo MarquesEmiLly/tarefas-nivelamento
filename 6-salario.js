@@ -1,13 +1,17 @@
 function salario(profissao, dias) {
-    let cobre = 30 
-    let prata = 40
-    let ouro = 50
-    if(dias>=30){
+    let cobre = 30 //reais por dia 
+    let prata = 40 //reais por dia
+    let ouro = 50 //reais por dia
+    
+    if(dias>30){
         return "trabalhou mais do que devia!!!"
+    }
+    if( "faxineiro" === profissao){
+    return "" + dias*30
     }
 
 }
-console.log(salario(,30))
+console.log(salario("faxineiro", 20))
 
 
 
