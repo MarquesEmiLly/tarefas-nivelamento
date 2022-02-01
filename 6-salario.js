@@ -1,12 +1,19 @@
 function salario(profissao, dias) {
-    dias = 0
-    const ferreiro = profissao * (dias + 7) //10*7=70
-    const dev = profissao * (dias + 5) //20*5=100
-    const merendeira = profissao * (dias + 10)//30*10= 300
-    return ferreiro +'---'+ dev + '---' + merendeira
+    let cobre = 30 
+    let prata = 40
+    let ouro = 50
+    if(dias>=30){
+        return "trabalhou mais do que devia!!!"
+    }
 
 }
-console.log(salario(30, 20, 10))
+console.log(salario(,30))
+
+
+
+
+
+
 
 /*salario = ouro,prata e cobre = numeros/parametros
 dias * ouro
