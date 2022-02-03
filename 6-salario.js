@@ -1,17 +1,33 @@
 function salario(profissao, dias) {
-    let cobre = 30 //reais por dia 
-    let prata = 40 //reais por dia
-    let ouro = 50 //reais por dia
-    
-    if(dias>30){
-        return "trabalhou mais do que devia!!!"
+    let cobre = 10 //reais por dia 
+    let prata = 20 //reais por dia
+    let ouro = 30//reais por dia
+    let profissoes = profissao.toUpperCase() //conversão das letras no console 
+    if (dias == 0) {
+        return "Não trabalhou nenhum dia "
     }
-    if( "faxineiro" === profissao){
-    return "" + dias*30
+    if (dias <= -1) {
+        return "Esta devendo dias de trabalho"
     }
-
+    if (dias > 50) {     //caso ultrapassar os 50 dias
+        return "trabalhou mais do que devia!"
+    }
+    if ("FERREIRO" === profissoes) {
+        const salario1 = cobre * dias //calculo do salario
+        return `o salário do Ferreiro é de : ${salario1}`
+    }
+    if ("ESCAVADOR" === profissoes) {
+        const salario2 = prata * dias //calculo do salario
+        return `o salário do Escavador é de : ${salario2}`
+    }
+    if ("MINEIRADOR" === profissoes) {
+        const salario3 = ouro * dias //calculo do salario
+        return `O salário do Mineirador é de : ${salario3}`
+    }
+    return "Profissão não reconhecida"
 }
-console.log(salario("faxineiro", 20))
+
+console.log(salario("mineirador", 0))
 
 
 
