@@ -1,24 +1,43 @@
 function salario(profissao, dias, moedas) {
-    let moedaDeCobre = 10 //reais por dia 
-    let moedaDePrata = 20 //reais por dia
-    let moedaDeOuro = 30//reais por dia
-    let profissoes = profissao.toUpperCase() //conversão das letras no console 
-    //let Ferreiro = 10 //dias trabalhado para cada profissional
-    if (moedas <= "ouro") {
-        const calculo = dias * moedaDeOuro
-        return `${profissoes} trabalhou durante ${dias} e irá receber ${calculo} de ouro`
-
-    }
-
+    const moedaDeCobre = 10
+    const moedaDePrata = 50
+    const moedaDeOuro = 100
+    let moedinha = moedas.toUpperCase()
+    
     if (dias == 0) {
         return "Não trabalhou nenhum dia "
     }
     if (dias <= -1) {
         return "Esta devendo dias de trabalho"
     }
+    if (dias >= 25) {
+        const calculoExtra = moedaDeCobre * 3
+        return `hora extra opcional no valor de : ${calculoExtra} cobres`
+    }
+
     if (dias > 30) {
         return "trabalhou mais do que devia!"
     }
+
+    if (moedinha === "OURO") {
+        let ouro = moedaDeOuro || moedaDePrata * 2 || moedaDeCobre * 10
+        const calculo = dias * ouro
+        return `${profissao} trabalhou durante ${dias} dias e irá receber ${calculo} de ouro`
+
+    }
+    if (moedinha === "PRATA") {
+        let prata = moedaDePrata || moedaDeOuro / 2 || moedaDeCobre * 5
+        const calculo = dias * prata
+        return `${profissao} trabalhou durante ${dias} dias e irá receber ${calculo} de prata`
+    }
+
+    if (moedinha === "COBRE") {
+        let cobre = moedaDeCobre || moedaDePrata / 5 || moedaDeOuro / 10
+        const calculo = dias * cobre
+        return `${profissao} trabalhou durante ${dias} dias e irá receber ${calculo} de cobre`
+    }
+    return "não aceitamos essa moédinha"
+
 }
 
-console.log(salario("Mineirador", 20, "ouro"))
+console.log(salario("faxineiro", 28, "cobre"))
